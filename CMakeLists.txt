@@ -22,7 +22,7 @@ FetchContent_MakeAvailable(SFML nlohmann_json)
 file(GLOB_RECURSE SRC src/*.cpp)
 set(SOURCE ${SRC})
 add_executable(Izrael ${SOURCE})
-target_link_libraries(Izrael PRIVATE SFML::Graphics SFML::Audio nlohmann)
+target_link_libraries(Izrael PRIVATE SFML::Graphics SFML::Audio nlohmann_json::nlohmann_json)
 
 if (MSVC)
     target_compile_options(Izrael PRIVATE /W4)

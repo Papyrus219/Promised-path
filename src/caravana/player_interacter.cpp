@@ -20,6 +20,8 @@ const izrael::Player_interacter & izrael::Player_interacter::operator=(const Pla
 {
     this->map = other.map;
     this->moses = other.moses;
+
+    return *this;
 }
 
 void izrael::Player_interacter::Move_moses_on_map()

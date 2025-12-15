@@ -1,6 +1,15 @@
 #include "subject.hpp"
+#include "observer.hpp"
 
 using namespace izrael;
+
+void izrael::Subject::Notify(const Entities_group& entities, Event event)
+{
+    for(auto observer : observers)
+    {
+        observer->onNotify(entities,event);
+    }
+}
 
 void izrael::Subject::Add_observer(Observer* new_observer)
 {
