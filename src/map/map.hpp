@@ -1,22 +1,29 @@
 #ifndef IZRAEL_MAP_HPP
 #define IZRAEL_MAP_HPP
 
+#include <SFML/System/Vector2.hpp>
 #include <array>
 #include "../globals.hpp"
+#include "../tools/observer.hpp"
 
 namespace izrael {
+
+class Moses;
 
 /**
  * @todo write docs
  */
-class Map
+class Map: public Observer
 {
     bool Get_is_tile_was_visited(uint64_t y, uint64_t x);
+    void Upadate_moses_path(Direction dirr, sf::Vector2u new_poss);
 
+    void On_notify(const Entities_group & entities, Event event) override;
+
+    virtual ~Map() = default;
 private:
     std::array< std::array<bool,MAP_HEIGHT>,MAP_WIDTH> is_visited{};
-
-    friend class Player_interacter;
+    sf::Vector2u last_moses_possition{};
 };
 
 }

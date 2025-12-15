@@ -3,7 +3,8 @@
 
 enum class Event
 {
-    ENTIETIES_MOVE
+    ENTIETIES_MOVE,
+    MOSES_MOVE,
 };
 
 #endif

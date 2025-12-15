@@ -16,9 +16,9 @@ class Entities_group
 public:
     void Move();
 
-    sf::Vector2u Get_currect_possition() {return this->curr_possiton;};
-    Direction Get_currect_direction() {return this->curr_dirrection;};
-    uint16_t Get_move_distance() {return this->move_disstance;};
+    sf::Vector2u Get_currect_possition() const {return this->curr_possiton;};
+    Direction Get_currect_direction() const {return this->curr_dirrection;};
+    uint16_t Get_move_distance() const {return this->move_disstance;};
 
 protected:
     sf::Vector2u curr_possiton{};

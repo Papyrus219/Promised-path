@@ -26,11 +26,5 @@ const izrael::Player_interacter & izrael::Player_interacter::operator=(const Pla
 
 void izrael::Player_interacter::Move_moses_on_map()
 {
-    __attribute_maybe_unused__ int move_diss = moses.Get_move_distance();
-    __attribute_maybe_unused__ sf::Vector2i moved_disstance{};
-    switch(moses.Get_currect_direction())
-    {
-        default:
-            break;
-    }
+
 }
