@@ -9,9 +9,9 @@ void izrael::Entities_group::Move()
     sf::Vector2u new_poss{};
 
     switch(this->curr_dirrection)
-    {
+    {//NIE DZIAŁA! NAPRAW DEBILU!
         case Direction::NORTH:
-            new_poss = this->curr_possiton + sf::Vector2u{-this->move_disstance, 0};
+            new_poss = static_cast<sf::Vector2u>( this->curr_possiton + sf::Vector2i{-this->move_disstance, 0} );
             if(new_poss.y < 1) new_poss.y = 1;
 
             break;

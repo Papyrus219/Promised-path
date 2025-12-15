@@ -2,6 +2,7 @@
 #define IZRAEL_ENTITY_HPP
 
 #include <SFML/System/Vector2.hpp>
+#include <stdint.h>
 #include "./direction.hpp"
 #include "../tools/subject.hpp"
 
@@ -16,8 +17,8 @@ public:
     void Move();
 
     sf::Vector2u Get_currect_possition() {return this->curr_possiton;};
-    Direction Get_currect_direction() {return this->curr_dirrection};
-    uint16_t Get_move_distance() {return this->move_disstance};
+    Direction Get_currect_direction() {return this->curr_dirrection;};
+    uint16_t Get_move_distance() {return this->move_disstance;};
 
 protected:
     sf::Vector2u curr_possiton{};

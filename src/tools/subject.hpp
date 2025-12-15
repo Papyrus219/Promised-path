@@ -2,11 +2,12 @@
 #define IZRAEL_SUBJECT_HPP
 
 #include <vector>
-#include "../entieties/entities_group.hpp"
+#include "./event.hpp"
 
 namespace izrael {
 
 class Observer;
+class Entities_group;
 
 /**
  * @todo write docs
