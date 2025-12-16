@@ -11,7 +11,7 @@ namespace izrael {
  */
 class Moses : public Entities_group
 {
-
+    Moses(): entities_group{Entities_type::IZRAELITS} {};
 };
 
 }
