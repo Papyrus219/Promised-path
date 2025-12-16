@@ -1,5 +1,5 @@
-#ifndef IZRAEL_RENDERER_HPP
-#define IZRAEL_RENDERER_HPP
+#ifndef IZRAEL_RENDER_MANAGER_HPP
+#define IZRAEL_RENDER_MANAGER_HPP
 
 #include <SFML/Graphics.hpp>
 #include "./entieties_icons_graphics_manager.hpp"
@@ -10,7 +10,7 @@ namespace izrael {
 /**
  * @todo write docs
  */
-class Renderer
+class Render_manager
 {
 public:
     void Init_window(sf::VideoMode size);

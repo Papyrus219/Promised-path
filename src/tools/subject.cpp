@@ -7,7 +7,7 @@ void izrael::Subject::Notify(const Entities_group& entities, Event event)
 {
     for(auto observer : observers)
     {
-        observer->onNotify(entities,event);
+        observer->On_notify(entities,event);
     }
 }
 

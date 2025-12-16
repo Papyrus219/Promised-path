@@ -8,7 +8,7 @@ void izrael::Map_graphics_manager::Set_texture_to_sprite(sf::Sprite& sprite)
     sprite.setTexture(this->texture);
 }
 
-void izrael::Map_graphics_manager::Load_map_graphic(std::filesystem::path path)
+void izrael::Map_graphics_manager::Setup_map_graphic(std::filesystem::path path)
 {
     if(!this->texture.loadFromFile(path))
     {

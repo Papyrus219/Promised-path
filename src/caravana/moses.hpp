@@ -11,7 +11,10 @@ namespace izrael {
  */
 class Moses : public Entities_group
 {
-    Moses(): entities_group{Entities_type::IZRAELITS} {};
+public:
+    Moses(): Entities_group{Entieties_type::IZRAELITS} {};
+private:
+
 };
 
 }
