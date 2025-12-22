@@ -1,5 +1,5 @@
 #include "input_handler.hpp"
-#include "../../caravana/moses.hpp"
+#include "../../player/moses.hpp"
 #include <stdexcept>
 #include <iostream>
 

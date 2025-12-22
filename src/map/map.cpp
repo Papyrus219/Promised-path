@@ -1,6 +1,6 @@
 #include "map.hpp"
-#include "../caravana/moses.hpp"
-//#include "../entieties/entities_group.hpp"
+#include "../player/moses.hpp"
+#include "../entieties/entities_group.hpp"
 #include <stdexcept>
 
 using namespace izrael;

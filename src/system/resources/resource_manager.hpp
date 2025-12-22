@@ -4,7 +4,7 @@
 #include <span>
 #include <memory>
 #include "../../entieties/entities_group.hpp"
-#include "../../caravana/moses.hpp"
+#include "../../player/moses.hpp"
 #include "../../map/map.hpp"
 
 namespace izrael {
