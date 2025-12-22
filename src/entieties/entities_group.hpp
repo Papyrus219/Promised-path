@@ -18,7 +18,7 @@ class Entities_group
 public:
     Entities_group(Entieties_sprite_id sprite_id_) noexcept;
 
-    void Move();
+    void Update();
 
     void Set_direction(Direction dirr) {this->curr_dirrection = dirr;};
 
@@ -32,6 +32,8 @@ public:
 
     virtual ~Entities_group() noexcept;
 protected:
+    void Move();
+
     std::uint16_t entity_id{};
 
     sf::Vector2f curr_possiton{};

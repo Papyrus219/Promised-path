@@ -22,6 +22,10 @@ izrael::Entities_group::Entities_group ( Entieties_sprite_id sprite_id_ ) noexce
     }
 }
 
+void izrael::Entities_group::Update()
+{
+    this->Move();
+}
 
 void izrael::Entities_group::Move()
 {

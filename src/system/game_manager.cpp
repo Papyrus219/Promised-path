@@ -12,7 +12,7 @@ void izrael::Game_manager::Setup()
     render_manager.Setup_icons_sprites("../../img/entieties.png",3);
     render_manager.Setup_map_graphic("../../img/map.jpg");
 
-    render_manager.Init_window( {globals::MAP_WIDTH, globals::MAP_HEIGHT} );
+    render_manager.Init_window( {globals::GAME_WIDTH, globals::GAME_HEIGHT} );
 
     logic_manager.input_handler.Assign_player( resource_manager.Get_player() );
     logic_manager.Assign_render_manager(render_manager);

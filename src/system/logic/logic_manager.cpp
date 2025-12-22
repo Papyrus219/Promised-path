@@ -7,11 +7,19 @@ using namespace izrael;
 void izrael::Logic_manager::Loop()
 {
     Valid_check();
+    tic_clock.start();
 
     while(render_manager->Get_is_window_open())
     {
         render_manager->Render();
         Handle_events();
+
+        if(tic_clock.getElapsedTime() >= globals::TIC_DURATION)
+        {
+            Update_entities();
+
+            tic_clock.restart();
+        }
     }
 }
 
@@ -28,6 +36,18 @@ void izrael::Logic_manager::Handle_events()
             input_handler.Handle_input(key->scancode);
         }
     }
+}
+
+void izrael::Logic_manager::Update_entities()
+{
+    auto entieties = this->resource->Get_enemy_groups();
+    for(const auto &entity : entieties)
+    {
+        entity->Update();
+    }
+
+    auto &player = this->resource->Get_player();
+    player.Update();
 }
 
 void izrael::Logic_manager::Assign_render_manager ( Render_manager& render_manager_ )
