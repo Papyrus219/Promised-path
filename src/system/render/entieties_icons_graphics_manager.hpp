@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <filesystem>
-#include "../../entieties/entieties_type.hpp"
+#include "../../entieties/entieties_sprites_id.hpp"
 
 namespace izrael {
 
@@ -13,8 +13,9 @@ namespace izrael {
 class Entieties_icons_graphics_manager
 {
 public:
-    void Setup_icons_sprites(std::filesystem::path path, sf::Vector2i icon_size, uint8_t entieties_amonut);
-    void Set_texture_to_sprite(sf::Sprite &sprite, uint8_t entieties_id);
+    void Setup_icons_sprites(std::filesystem::path path, uint8_t entieties_amonut);
+
+    void Set_texture_to_sprite(sf::Sprite &sprite, Entieties_sprite_id id);
 private:
     sf::Texture texture{};
     std::vector<sf::IntRect> texture_rectangles{};

@@ -2,10 +2,11 @@
 #define IZRAEL_ENTITIES_GROUP_HPP
 
 #include <SFML/System/Vector2.hpp>
-#include <stdint.h>
+#include <stack>
+#include <cstdint>
 #include "./direction.hpp"
 #include "../tools/subject.hpp"
-#include "./entieties_type.hpp"
+#include "./entieties_sprites_id.hpp"
 
 namespace izrael {
 
@@ -15,24 +16,32 @@ namespace izrael {
 class Entities_group
 {
 public:
-    Entities_group(Entieties_type type_) noexcept: type{type_} {};
+    Entities_group(Entieties_sprite_id sprite_id_) noexcept;
 
     void Move();
 
     void Set_direction(Direction dirr) {this->curr_dirrection = dirr;};
 
-    sf::Vector2u Get_currect_possition() const noexcept {return this->curr_possiton;};
+    std::uint16_t Get_entity_id() const noexcept {return this->entity_id;};
+    sf::Vector2f Get_currect_possition() const noexcept {return this->curr_possiton;};
     Direction Get_currect_direction() const noexcept {return this->curr_dirrection;};
-    Entieties_type Get_type() const noexcept {return this->type;};
-    uint16_t Get_move_distance() const noexcept {return this->move_disstance;};
+    Entieties_sprite_id Get_sprite_id() const noexcept {return this->sprite_id;};
+    std::uint16_t Get_move_distance() const noexcept {return this->move_disstance;};
 
-protected:
-    sf::Vector2u curr_possiton{};
-    Direction curr_dirrection{};
-    uint16_t move_disstance{5};
-
-    Entieties_type type{};
     Subject subject{};
+
+    virtual ~Entities_group() noexcept;
+protected:
+    std::uint16_t entity_id{};
+
+    sf::Vector2f curr_possiton{};
+    Direction curr_dirrection{};
+    std::uint16_t move_disstance{2};
+
+    Entieties_sprite_id sprite_id{};
+
+    static std::stack< std::uint16_t > free_ids;
+    static std::uint16_t next_entity_id;
 };
 
 }

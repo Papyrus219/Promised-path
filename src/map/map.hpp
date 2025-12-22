@@ -15,15 +15,16 @@ class Moses;
  */
 class Map: public Observer
 {
+public:
     bool Get_is_tile_was_visited(uint64_t y, uint64_t x);
-    void Upadate_moses_path(Direction dirr, sf::Vector2u new_poss);
+    void Upadate_moses_path(Direction dirr, sf::Vector2f new_poss);
 
     void On_notify(const Entities_group & entities, Event event) override;
 
     virtual ~Map() = default;
 private:
-    std::array< std::array<bool,MAP_HEIGHT>,MAP_WIDTH> is_visited{};
-    sf::Vector2u last_moses_possition{};
+    std::array< std::array<bool,globals::MAP_HEIGHT>,globals::MAP_WIDTH> is_visited{};
+    sf::Vector2f last_moses_possition{};
 };
 
 }

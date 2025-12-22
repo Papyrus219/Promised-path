@@ -1,8 +1,12 @@
 #include <iostream>
+#include "./system/game_manager.hpp"
 
 int main()
 {
-    std::cout << "Hello world!\n";
+    izrael::Game_manager game{};
+    game.Setup();
+
+    game.Start();
 
     return 0;
 }

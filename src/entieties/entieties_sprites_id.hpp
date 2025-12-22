@@ -3,10 +3,11 @@
 
 namespace izrael
 {
-    enum class Entieties_type
+    enum class Entieties_sprite_id: unsigned int
     {
-        IZRAELITS,
-        MOABITS
+        NONE = 0,
+        IZRAELITS = 1,
+        MOABITS = 2,
     };
 }
 

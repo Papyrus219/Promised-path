@@ -7,12 +7,12 @@ using namespace izrael;
 
 bool izrael::Map::Get_is_tile_was_visited(uint64_t y, uint64_t x)
 {
-    if( y > MAP_HEIGHT || x > MAP_WIDTH)
+    if( y > globals::MAP_HEIGHT || x > globals::MAP_WIDTH)
     {
         throw std::out_of_range{"Try to get map tile visition out of range."};
     }
 
-    return is_visited[y][x];
+    return is_visited[x][y];
 }
 
 void izrael::Map::On_notify(const Entities_group& entities, Event event)
@@ -27,9 +27,13 @@ void izrael::Map::On_notify(const Entities_group& entities, Event event)
     }
 }
 
-void izrael::Map::Upadate_moses_path(Direction dirr, sf::Vector2u new_poss)
+void izrael::Map::Upadate_moses_path(Direction dirr, sf::Vector2f new_poss)
 {
     auto [x,y] = last_moses_possition;
+
+    x/=5;
+    y/=5;
+
     switch(dirr)
     {
         case Direction::NORTH:

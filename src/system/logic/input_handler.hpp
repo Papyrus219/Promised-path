@@ -3,9 +3,10 @@
 
 #include <SFML/Window.hpp>
 #include <optional>
-#include "./player_interacter.hpp"
 
 namespace izrael {
+
+class Moses;
 
 /**
  * @todo write docs
@@ -14,12 +15,12 @@ class Input_handler
 {
 public:
     Input_handler() = default;
-    void Init_player_interacter(Map& map, Moses& moses);
+    void Assign_player(Moses& player_);
 
     void Handle_input(sf::Keyboard::Scancode key);
 
 private:
-    std::optional<Player_interacter> interacter{};
+    Moses* player;
 };
 
 }
